@@ -32,7 +32,7 @@ def show_blog():
     if request.args:
         blog_id = request.args.get('id')
         blogs = Blog.query.filter_by(id=blog_id).all()
-        return render_template('single_post.html', blogs=blogs)
+        return render_template('blog_post.html', blogs=blogs)
 
     else:
         blogs = Blog.query.all()
