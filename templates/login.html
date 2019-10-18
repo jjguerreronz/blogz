@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<title>Blogz Assignment - login page</title>
+
+<h1>Please sign in</h1>
+
+<form method="post" action="/login" />
+<input type='text' placeholder='Username' name='username' value='{{request.form.username}}'>
+<div>
+    <input type='password' placeholder='Password' name='password' value='{{request.form.password}}'>
+</div>
+<div>
+    <button type="submit">Sign in</button>
+</div>
+
+</form>
+
+{% endblock %}
+
+</body>
+
+</html>
