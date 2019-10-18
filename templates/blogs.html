@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 {% if session['logged_in'] %}
-<h1>Welcome to {{ user.username }} Dashboard</h1>
+<h1>Welcome to {{ user.username }} Sandbox</h1>
 
 <nav>
     <a href="/logout">Logout</a>
@@ -10,7 +10,7 @@
     <a href="/newblog">New Blog Post</a>
 </nav>
 {% else %}
-<h1>Welcome to the Dashboard</h1>
+<h1>Dashboard</h1>
 <nav>
     <a href="/signup">Register</a>
     <div>

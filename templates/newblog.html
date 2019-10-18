@@ -1,39 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% if session['logged_in'] %}
+<h1>Add Blog Entry</h1>
+<form method='post'>
+    <label>
+        Title For Your New Post:
+        <br>
+        <input type="text" name='title' required />
+        <br><br>
+        Your New Post:
+        <br>
+        <textarea name="body" rows="4" cols="50" required></textarea>
+    </label>
+    <input type="submit" value='Add Post' />
+</form>
 
-
-
-<h1>New Blog:</h1>
-    <form action="/newblog" method='post'>
-        <label>
-            New Blog Title:
-            <input id='blog_name' type='text' name='blog_name' />
-        </label> <div>
-
-    </div>
-        {% if title_error %}
-            <p class = "error">{{title_error}}</p>
-        {% endif %}
-
-    <hr />
-
-
-        <label>
-            New Blog:
-            <textarea id='blog' name='blog' ></textarea>
-        </label>
-        {% if body_error %}
-            <p class = "error">{{body_error}}</p>
-        {% endif %}
-        <input type='submit' value='Finished' />
-    </form>
-    {% else %}
-        <a href="/login.html">Please Log In!</a>
-    {% endif %}
 {% endblock %}
-
-</body>
-</html>
-    

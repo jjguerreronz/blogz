@@ -1,6 +1,8 @@
 from flask import Flask, request, redirect, render_template, flash, session
 from flask_sqlalchemy import SQLAlchemy
-import traceback
+
+from sqlalchemy import text
+
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
@@ -166,6 +168,7 @@ def logout():
 
 @app.route("/blog/<blog_id>/", methods=['GET'])
 def individual_entry(blog_id):
+
     blog = Blog.query.filter(blog_id).first()
     user = User.query.get(session['author_id'])
 
